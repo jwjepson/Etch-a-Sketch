@@ -1,7 +1,11 @@
 const body = document.querySelector("body");
 
 function changeSize() {
-    let size = prompt("What size would you like?");
+    size = prompt("Enter a size between 1 and 100");
+    if (size <= 0 || size > 100) {
+        alert("Incorrect size");
+        changeSize();
+    }
     removeGrid();
     createGrid(size);
 }
