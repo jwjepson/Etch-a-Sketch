@@ -42,8 +42,8 @@ function clear() {
     squares.forEach(square => square.style.backgroundColor = "white");
 }
 
-sizeButton = document.querySelector(".change-size");
+const sizeButton = document.querySelector(".change-size");
 sizeButton.addEventListener("click", changeSize);
 
-clearButton = document.querySelector(".clear");
+const clearButton = document.querySelector(".clear");
 clearButton.addEventListener("click", clear);
