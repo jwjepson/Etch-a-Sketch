@@ -22,14 +22,15 @@
     margin-top: -1px;
 }
 
-.change-size, .clear {
+.change-size, .clear, .black, .random-color {
     padding: 10px;
     border-radius: .5em;
     border: none;
     margin-left: 20px;
+    background-color: white;
 }
 
-.change-size:hover, .clear:hover {
+.change-size:hover, .clear:hover, .black:hover, .random-color:hover {
     background-color: lightgray;
 }
 
