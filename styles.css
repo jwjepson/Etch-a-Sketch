@@ -8,11 +8,12 @@
 .row {
     display: flex;
     flex: 1;
-    border: 1px solid black;
 }
 
 .column {
     box-sizing: border-box;
     flex: 1;
     border: 1px solid black;
+    margin-left: -1px;
+    margin-top: -1px;
 }
