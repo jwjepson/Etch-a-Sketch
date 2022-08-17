@@ -24,7 +24,7 @@ function createGrid(size = 16) {
             row.appendChild(column);
         }
     }
-    draw();
+    black();
 }
 
 function removeGrid() {
@@ -33,13 +33,31 @@ function removeGrid() {
 }
 
 createGrid();
-draw();
 
-function draw() {
+function randomColor() {
+    const randomColorButton = document.querySelector(".random-color");
+    randomColorButton.style.backgroundColor = "lightgray";
+
+    const blackButton = document.querySelector(".black");
+    blackButton.style.backgroundColor = "white";
+
     squares = document.querySelectorAll(".column");
     squares.forEach(square => square.addEventListener("mouseover", () => {
         const randomColor = Math.floor(Math.random()*16777215).toString(16);
         square.style.backgroundColor = "#" + randomColor;
+    }));
+}
+
+function black() {
+    const blackButton = document.querySelector(".black");
+    blackButton.style.backgroundColor = "lightgray";
+
+    const randomColorButton = document.querySelector(".random-color");
+    randomColorButton.style.backgroundColor = "white";
+
+    squares = document.querySelectorAll(".column");
+    squares.forEach(square => square.addEventListener("mouseover", () => {
+        square.style.backgroundColor = "black";
     }));
 }
 
@@ -52,3 +70,9 @@ sizeButton.addEventListener("click", changeSize);
 
 const clearButton = document.querySelector(".clear");
 clearButton.addEventListener("click", clear);
+
+const blackButton = document.querySelector(".black");
+blackButton.addEventListener("click", black);
+
+const randomColorButton = document.querySelector(".random-color");
+randomColorButton.addEventListener("click", randomColor);
