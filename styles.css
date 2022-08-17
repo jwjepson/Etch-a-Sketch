@@ -3,6 +3,9 @@
     width: 600px;
     display: flex;
     flex-direction: column;
+    margin: auto;
+    margin-top: 30px;
+    background-color: white;
 }
 
 .row {
@@ -16,4 +19,27 @@
     border: 1px solid black;
     margin-left: -1px;
     margin-top: -1px;
+}
+
+.change-size, .clear {
+    padding: 10px;
+    border-radius: .5em;
+    border: none;
+    margin-left: 20px;
+}
+
+.change-size:hover, .clear:hover {
+    background-color: lightgray;
+}
+
+body {
+    background-color: tan;
+    text-align: center;
+    font-family: fantasy, arial;
+}
+
+.title {
+    font-size: 50px;
+    color: black;
+    letter-spacing: 5px;
 }
