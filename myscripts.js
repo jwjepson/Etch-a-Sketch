@@ -1,15 +1,15 @@
 const body = document.querySelector("body");
-const container = document.createElement("div");
-container.classList.add("grid-container");
-
-body.appendChild(container);
 
 function changeSize() {
     let size = prompt("What size would you like?");
+    removeGrid();
     createGrid(size);
 }
 
 function createGrid(size = 16) {
+    const container = document.createElement("div");
+    container.classList.add("grid-container");
+    body.appendChild(container);
     for (let i = 0; i < size; i++) {
         const row = document.createElement("div");
         row.classList.add("row");
@@ -20,14 +20,23 @@ function createGrid(size = 16) {
             row.appendChild(column);
         }
     }
+    draw();
+}
+
+function removeGrid() {
+    grid = document.querySelector(".grid-container");
+    grid.remove();
 }
 
 createGrid();
+draw();
 
-squares = document.querySelectorAll(".column");
-squares.forEach(square => square.addEventListener("mouseover", () => {
-    square.style.backgroundColor = "black";
-}));
+function draw() {
+    squares = document.querySelectorAll(".column");
+    squares.forEach(square => square.addEventListener("mouseover", () => {
+        square.style.backgroundColor = "black";
+    }));
+}
 
 sizeButton = document.querySelector(".change-size");
 sizeButton.addEventListener("click", changeSize);
