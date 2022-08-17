@@ -38,7 +38,8 @@ draw();
 function draw() {
     squares = document.querySelectorAll(".column");
     squares.forEach(square => square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = "black";
+        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        square.style.backgroundColor = "#" + randomColor;
     }));
 }
 
