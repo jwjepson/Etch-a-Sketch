@@ -18,3 +18,8 @@ function createGrid() {
 }
 
 createGrid();
+
+squares = document.querySelectorAll(".column");
+squares.forEach(square => square.addEventListener("mouseover", () => {
+    square.style.backgroundColor = "black";
+}));
